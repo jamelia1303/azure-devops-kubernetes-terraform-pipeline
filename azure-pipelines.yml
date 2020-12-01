@@ -24,15 +24,7 @@ steps:
 
 - task: TerraformCLI@0
   inputs:
-    command: 'init'
+    command: 'apply'
     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
     commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFilePath)'
-    backendType: 'azurerm'
-    backendServiceArm: 'Azure Pass - Sponsorship(c2eb07fa-ab42-4916-ba05-d4572e3f64ae)'
-    ensureBackend: true
-    backendAzureRmResourceGroupName: 'terraform-backend'
-    backendAzureRmResourceGroupLocation: 'eastus2'
-    backendAzureRmStorageAccountName: 'storageaccounttanya130'
-    backendAzureRmContainerName: 'backend'
-    backendAzureRmKey: 'kubernetes-dev.tfstate'
-    allowTelemetryCollection: true
+
