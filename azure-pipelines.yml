@@ -22,9 +22,16 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
+
 - task: TerraformCLI@0
   inputs:
-    command: 'apply'
+    command: 'init'
     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
     commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFilePath)'
+    backendType: 'azurerm'
+    backendServiceArm: 'Azure Pass - Sponsorship(c2eb07fa-ab42-4916-ba05-d4572e3f64ae)'
+    backendAzureRmStorageAccountName: 'storageaccounttanya130'
+    backendAzureRmContainerName: 'backend'
+    backendAzureRmKey: 'kubernetes-dev.tfstate'
+    allowTelemetryCollection: true
 
