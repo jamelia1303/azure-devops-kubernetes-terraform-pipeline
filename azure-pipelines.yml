@@ -30,6 +30,7 @@ steps:
     commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFilePath)'
     backendType: 'azurerm'
     backendServiceArm: 'Azure Pass - Sponsorship(c2eb07fa-ab42-4916-ba05-d4572e3f64ae)'
+    backendAzureRmResourceGroupName: 'terraform-backend'
     backendAzureRmStorageAccountName: 'storageaccounttanya130'
     backendAzureRmContainerName: 'backend'
     backendAzureRmKey: 'kubernetes-dev.tfstate'
