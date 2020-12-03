@@ -24,8 +24,8 @@ stages:
     steps:
     - task: Docker@2
       inputs:
-        containerRegistry: 'in28min-docker-hub'
-        repository: 'in28min/currency-exchange-devops'
+        containerRegistry: 'docker'
+        repository: 'jamelia1303/currency-exchange-devops'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
         tags: '$(tag)'
@@ -54,5 +54,5 @@ stages:
         kubernetesServiceConnection: 'Kubernetes'
         namespace: 'default'
         manifests: '$(System.ArtifactsDirectory)/deployment.yaml'
-        containers: 'in28min/currency-exchange-devops:${tag}'
+        containers: 'jamelia1303/currency-exchange-devops:${tag}'
    
